@@ -1,4 +1,4 @@
-package ir.mapsa.bank.model;
+package ir.mapsa.bank.model.enums;
 
 public enum TransactionType {
 

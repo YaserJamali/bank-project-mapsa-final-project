@@ -1,9 +1,12 @@
 package ir.mapsa.bank.model;
 
 
-import javax.persistence.*;
+import ir.mapsa.bank.model.enums.TransactionType;
 
-@Entity
+import javax.persistence.*;
+import java.util.Date;
+
+@Entity(name = "transactionEntity")
 public class Transaction {
 
     @Id
@@ -15,6 +18,10 @@ public class Transaction {
 
     @Enumerated(EnumType.STRING)
     private TransactionType transactionType;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date date = new Date();
+
     @Version
     private Integer version;
 
@@ -26,36 +33,39 @@ public class Transaction {
         this.transactionType = transactionType;
     }
 
-
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public Account getAccount() {
         return account;
     }
 
-    public void setAccount(Account account) {
+    public Transaction setAccount(Account account) {
         this.account = account;
+        return this;
     }
 
     public TransactionType getTransactionType() {
         return transactionType;
     }
 
-    public void setTransactionType(TransactionType transactionType) {
+    public Transaction setTransactionType(TransactionType transactionType) {
         this.transactionType = transactionType;
+        return this;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public Transaction setDate(Date date) {
+        this.date = date;
+        return this;
     }
 
     public Integer getVersion() {
         return version;
     }
 
-    public void setVersion(Integer version) {
-        this.version = version;
-    }
 }

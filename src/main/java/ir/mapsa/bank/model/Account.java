@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
+@Entity(name = "accountEntity")
 
 public class Account {
     @Id
@@ -36,47 +36,47 @@ public class Account {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+
 
     public Integer getAccountNumber() {
         return accountNumber;
     }
 
-    public void setAccountNumber(Integer accountNumber) {
+    public Account setAccountNumber(Integer accountNumber) {
         this.accountNumber = accountNumber;
+        return this;
     }
 
     public Branch getBranch() {
         return branch;
     }
 
-    public void setBranch(Branch branch) {
+    public Account setBranch(Branch branch) {
         this.branch = branch;
+        return this;
     }
 
     public Set<Customer> getCustomers() {
         return customers;
     }
 
-    public void setCustomers(Set<Customer> customers) {
+    public Account setCustomers(Set<Customer> customers) {
         this.customers = customers;
+        return this;
     }
 
     public Set<Transaction> getTransactions() {
         return transactions;
     }
 
-    public void setTransactions(Set<Transaction> transactions) {
+    public Account setTransactions(Set<Transaction> transactions) {
         this.transactions = transactions;
+        return this;
     }
 
     public Integer getVersion() {
         return version;
     }
 
-    public void setVersion(Integer version) {
-        this.version = version;
-    }
+
 }

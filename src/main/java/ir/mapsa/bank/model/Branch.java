@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
+@Entity(name = "branchEntity")
 
 public class Branch {
     @Id
@@ -33,39 +33,36 @@ public class Branch {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public Bank getBank() {
         return bank;
     }
 
-    public void setBank(Bank bank) {
+    public Branch setBank(Bank bank) {
         this.bank = bank;
+        return this;
     }
 
     public Set<Account> getAccounts() {
         return accounts;
     }
 
-    public void setAccounts(Set<Account> accounts) {
+    public Branch setAccounts(Set<Account> accounts) {
         this.accounts = accounts;
+        return this;
     }
 
     public String getBranchCode() {
         return branchCode;
     }
 
-    public void setBranchCode(String branchCode) {
+    public Branch setBranchCode(String branchCode) {
         this.branchCode = branchCode;
+        return this;
     }
 
     public Integer getVersion() {
         return version;
     }
 
-    public void setVersion(Integer version) {
-        this.version = version;
-    }
 }

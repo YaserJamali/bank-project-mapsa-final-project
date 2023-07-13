@@ -3,7 +3,7 @@ package ir.mapsa.bank.model;
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
-@Entity
+@Entity(name="bankEntity")
 public class Bank {
 
     @Id
@@ -29,31 +29,28 @@ public class Bank {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getBankName() {
         return bankName;
     }
 
-    public void setBankName(String bankName) {
+    public Bank setBankName(String bankName) {
         this.bankName = bankName;
+        return this;
     }
 
     public Set<Branch> getBranches() {
         return branches;
     }
 
-    public void setBranches(Set<Branch> branches) {
+    public Bank setBranches(Set<Branch> branches) {
         this.branches = branches;
+        return this;
     }
 
     public Integer getVersion() {
         return version;
     }
 
-    public void setVersion(Integer version) {
-        this.version = version;
-    }
+
 }
