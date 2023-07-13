@@ -1,7 +1,6 @@
 package ir.mapsa.bank.repository;
 
 import ir.mapsa.bank.model.Account;
-import ir.mapsa.bank.model.Bank;
 import ir.mapsa.bank.utils.SessionFactoryProvider;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -95,8 +94,21 @@ public class AccountRepository implements BaseRepository<Account, String, Long> 
         return accountList;
     }
 
+    public Account getAl() {
+        sf.openSession();
+        String queryString = "SELECT a FROM accountEntity a";
+        Query<Account> query = session.createQuery(queryString, Account.class);
+        Account account = query.getSingleResult();
+        return account;
+    }
+
+    public static void main(String[] args) {
+        AccountRepository repository=AccountRepository.getInstance();
+        System.out.println(repository.getAl().getAccountNumber());
+    }
+
     @Override
-    public void close()  {
+    public void close() {
         sf.close();
         session.close();
     }
