@@ -2,9 +2,8 @@ package ir.mapsa.bank.model;
 
 import ir.mapsa.bank.model.enums.CommunicativeTypes;
 
-import javax.persistence.Column;
-import javax.persistence.ElementCollection;
-import javax.persistence.Embeddable;
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -12,11 +11,12 @@ import java.util.List;
 public class CommunicativeInfo {
 
     @Column(name = "TYPE_OF_COMMUNICATIVE")
+    @Enumerated(EnumType.STRING)
     private CommunicativeTypes communicativeTypes;
 
 
     @ElementCollection
-    private List<String> communicativeTypesPaths;
+    private List<String> communicativeTypesPaths=new ArrayList<>();
 
 
     public CommunicativeTypes getCommunicativeTypes() {

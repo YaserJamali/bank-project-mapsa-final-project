@@ -1101,31 +1101,31 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <user id="310" parent="1" name="yaser">
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="311" parent="289" name="account">
+    <table id="311" parent="289" name="accountentity">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb3_general_ci</CollationName>
     </table>
-    <table id="312" parent="289" name="account_customer">
+    <table id="312" parent="289" name="accountentity_customer">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb3_general_ci</CollationName>
     </table>
-    <table id="313" parent="289" name="account_transaction">
+    <table id="313" parent="289" name="accountentity_transactionentity">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb3_general_ci</CollationName>
     </table>
-    <table id="314" parent="289" name="bank">
+    <table id="314" parent="289" name="bankentity">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb3_general_ci</CollationName>
     </table>
-    <table id="315" parent="289" name="bank_branch">
+    <table id="315" parent="289" name="bankentity_branchentity">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb3_general_ci</CollationName>
     </table>
-    <table id="316" parent="289" name="branch">
+    <table id="316" parent="289" name="branchentity">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb3_general_ci</CollationName>
     </table>
-    <table id="317" parent="289" name="branch_account">
+    <table id="317" parent="289" name="branchentity_accountentity">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb3_general_ci</CollationName>
     </table>
@@ -1133,7 +1133,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb3_general_ci</CollationName>
     </table>
-    <table id="319" parent="289" name="customer_account">
+    <table id="319" parent="289" name="customer_accountentity">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb3_general_ci</CollationName>
     </table>
@@ -1145,7 +1145,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb3_general_ci</CollationName>
     </table>
-    <table id="322" parent="289" name="transaction">
+    <table id="322" parent="289" name="transactionentity">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb3_general_ci</CollationName>
     </table>
@@ -1166,17 +1166,17 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <DataType>bigint|0s</DataType>
       <Position>4</Position>
     </column>
-    <foreign-key id="327" parent="311" name="FKl2c4hjutdqc9nl3gfabwboojy">
+    <foreign-key id="327" parent="311" name="FKlx9yxhs5bc4oxvce1qlqoloxs">
       <ColNames>branch_id</ColNames>
       <RefColNames>id</RefColNames>
-      <RefTableName>branch</RefTableName>
+      <RefTableName>branchentity</RefTableName>
     </foreign-key>
     <index id="328" parent="311" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="329" parent="311" name="FKl2c4hjutdqc9nl3gfabwboojy">
+    <index id="329" parent="311" name="FKlx9yxhs5bc4oxvce1qlqoloxs">
       <ColNames>branch_id</ColNames>
       <Type>btree</Type>
     </index>
@@ -1185,7 +1185,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="331" parent="312" name="Account_id">
+    <column id="331" parent="312" name="accountEntity_id">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1195,23 +1195,23 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <foreign-key id="333" parent="312" name="FK2bv7e77jpckps05iesty12k6v">
-      <ColNames>Account_id</ColNames>
+    <foreign-key id="333" parent="312" name="FKplxvy4ox4heke28xlf30tubdq">
+      <ColNames>accountEntity_id</ColNames>
       <RefColNames>id</RefColNames>
-      <RefTableName>account</RefTableName>
+      <RefTableName>accountentity</RefTableName>
     </foreign-key>
-    <foreign-key id="334" parent="312" name="FKjgd490qo8lp5yh3kfhqk1ytbl">
+    <foreign-key id="334" parent="312" name="FKcxflkgcm254e992cs832hs1q3">
       <ColNames>customers_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>customer</RefTableName>
     </foreign-key>
     <index id="335" parent="312" name="PRIMARY">
-      <ColNames>Account_id
+      <ColNames>accountEntity_id
 customers_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="336" parent="312" name="FKjgd490qo8lp5yh3kfhqk1ytbl">
+    <index id="336" parent="312" name="FKcxflkgcm254e992cs832hs1q3">
       <ColNames>customers_id</ColNames>
       <Type>btree</Type>
     </index>
@@ -1220,7 +1220,7 @@ customers_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="338" parent="313" name="Account_id">
+    <column id="338" parent="313" name="accountEntity_id">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1230,23 +1230,23 @@ customers_id</ColNames>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <foreign-key id="340" parent="313" name="FKnyi0hde6sa0lwn2lpy0g2p5ib">
-      <ColNames>Account_id</ColNames>
+    <foreign-key id="340" parent="313" name="FK1kc3bd94i0skt8u8qgx9n2n9n">
+      <ColNames>accountEntity_id</ColNames>
       <RefColNames>id</RefColNames>
-      <RefTableName>account</RefTableName>
+      <RefTableName>accountentity</RefTableName>
     </foreign-key>
-    <foreign-key id="341" parent="313" name="FKg8lw3coqj0s1y0qu1aoaphglg">
+    <foreign-key id="341" parent="313" name="FK5iyk2gfdmbnkagqussu5d3s4m">
       <ColNames>transactions_id</ColNames>
       <RefColNames>id</RefColNames>
-      <RefTableName>transaction</RefTableName>
+      <RefTableName>transactionentity</RefTableName>
     </foreign-key>
     <index id="342" parent="313" name="PRIMARY">
-      <ColNames>Account_id
+      <ColNames>accountEntity_id
 transactions_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="343" parent="313" name="UK_kos66461cdr97ttvu2mfa5013">
+    <index id="343" parent="313" name="UK_brixq9y0xyxrrcjtp4jomyqg6">
       <ColNames>transactions_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
@@ -1256,8 +1256,8 @@ transactions_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="345" parent="313" name="UK_kos66461cdr97ttvu2mfa5013">
-      <UnderlyingIndexName>UK_kos66461cdr97ttvu2mfa5013</UnderlyingIndexName>
+    <key id="345" parent="313" name="UK_brixq9y0xyxrrcjtp4jomyqg6">
+      <UnderlyingIndexName>UK_brixq9y0xyxrrcjtp4jomyqg6</UnderlyingIndexName>
     </key>
     <column id="346" parent="314" name="id">
       <DataType>bigint|0s</DataType>
@@ -1282,7 +1282,7 @@ transactions_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="351" parent="315" name="Bank_id">
+    <column id="351" parent="315" name="bankEntity_id">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1292,23 +1292,23 @@ transactions_id</ColNames>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <foreign-key id="353" parent="315" name="FKla5ckrl8xuxcbvubjvi3vdqp6">
-      <ColNames>Bank_id</ColNames>
+    <foreign-key id="353" parent="315" name="FK35oceypr4g4oq9xwhs69l75yf">
+      <ColNames>bankEntity_id</ColNames>
       <RefColNames>id</RefColNames>
-      <RefTableName>bank</RefTableName>
+      <RefTableName>bankentity</RefTableName>
     </foreign-key>
-    <foreign-key id="354" parent="315" name="FKkae2ohw0mmfy9x8e3wncqgt9b">
+    <foreign-key id="354" parent="315" name="FKcuolr48y45u2vgdegd3ufejwh">
       <ColNames>branches_id</ColNames>
       <RefColNames>id</RefColNames>
-      <RefTableName>branch</RefTableName>
+      <RefTableName>branchentity</RefTableName>
     </foreign-key>
     <index id="355" parent="315" name="PRIMARY">
-      <ColNames>Bank_id
+      <ColNames>bankEntity_id
 branches_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="356" parent="315" name="UK_6m61u8bcvppfdnxuocj54p3bc">
+    <index id="356" parent="315" name="UK_nah4eahxj9ncdrsfp1vu1f8h6">
       <ColNames>branches_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
@@ -1318,8 +1318,8 @@ branches_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="358" parent="315" name="UK_6m61u8bcvppfdnxuocj54p3bc">
-      <UnderlyingIndexName>UK_6m61u8bcvppfdnxuocj54p3bc</UnderlyingIndexName>
+    <key id="358" parent="315" name="UK_nah4eahxj9ncdrsfp1vu1f8h6">
+      <UnderlyingIndexName>UK_nah4eahxj9ncdrsfp1vu1f8h6</UnderlyingIndexName>
     </key>
     <column id="359" parent="316" name="id">
       <DataType>bigint|0s</DataType>
@@ -1338,17 +1338,17 @@ branches_id</ColNames>
       <DataType>bigint|0s</DataType>
       <Position>4</Position>
     </column>
-    <foreign-key id="363" parent="316" name="FK85pc65irk9xn7e2bou7b9002y">
+    <foreign-key id="363" parent="316" name="FKr8j1itqu8u2r51b568e064dg5">
       <ColNames>bank_id</ColNames>
       <RefColNames>id</RefColNames>
-      <RefTableName>bank</RefTableName>
+      <RefTableName>bankentity</RefTableName>
     </foreign-key>
     <index id="364" parent="316" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="365" parent="316" name="FK85pc65irk9xn7e2bou7b9002y">
+    <index id="365" parent="316" name="FKr8j1itqu8u2r51b568e064dg5">
       <ColNames>bank_id</ColNames>
       <Type>btree</Type>
     </index>
@@ -1357,7 +1357,7 @@ branches_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="367" parent="317" name="Branch_id">
+    <column id="367" parent="317" name="branchEntity_id">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1367,23 +1367,23 @@ branches_id</ColNames>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <foreign-key id="369" parent="317" name="FKiqceud6myodeln64jp1o02csl">
-      <ColNames>Branch_id</ColNames>
+    <foreign-key id="369" parent="317" name="FKme9iob1yl2jrnfy3rjx649olp">
+      <ColNames>branchEntity_id</ColNames>
       <RefColNames>id</RefColNames>
-      <RefTableName>branch</RefTableName>
+      <RefTableName>branchentity</RefTableName>
     </foreign-key>
-    <foreign-key id="370" parent="317" name="FKn31d2c461tlqq6esot4qluyvl">
+    <foreign-key id="370" parent="317" name="FKnld9lg5gj3t39nvy1hmyclc3r">
       <ColNames>accounts_id</ColNames>
       <RefColNames>id</RefColNames>
-      <RefTableName>account</RefTableName>
+      <RefTableName>accountentity</RefTableName>
     </foreign-key>
     <index id="371" parent="317" name="PRIMARY">
-      <ColNames>Branch_id
+      <ColNames>branchEntity_id
 accounts_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="372" parent="317" name="UK_srice3a856ju0qlwab8airjbr">
+    <index id="372" parent="317" name="UK_gghg7uq29psx0pj9n6fd8ing">
       <ColNames>accounts_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
@@ -1393,8 +1393,8 @@ accounts_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="374" parent="317" name="UK_srice3a856ju0qlwab8airjbr">
-      <UnderlyingIndexName>UK_srice3a856ju0qlwab8airjbr</UnderlyingIndexName>
+    <key id="374" parent="317" name="UK_gghg7uq29psx0pj9n6fd8ing">
+      <UnderlyingIndexName>UK_gghg7uq29psx0pj9n6fd8ing</UnderlyingIndexName>
     </key>
     <column id="375" parent="318" name="id">
       <DataType>bigint|0s</DataType>
@@ -1410,7 +1410,7 @@ accounts_id</ColNames>
       <Position>3</Position>
     </column>
     <column id="378" parent="318" name="TYPE_OF_COMMUNICATIVE">
-      <DataType>int|0s</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <Position>4</Position>
     </column>
     <column id="379" parent="318" name="firstName">
@@ -1418,7 +1418,7 @@ accounts_id</ColNames>
       <Position>5</Position>
     </column>
     <column id="380" parent="318" name="language">
-      <DataType>int|0s</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <Position>6</Position>
     </column>
     <column id="381" parent="318" name="lastName">
@@ -1461,15 +1461,15 @@ accounts_id</ColNames>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <foreign-key id="390" parent="319" name="FKmwfymlrjfuvw2cpaavbkbkv6s">
+    <foreign-key id="390" parent="319" name="FKotrk84lu7cwuaki0i1wanqo0">
       <ColNames>customerEntity_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>customer</RefTableName>
     </foreign-key>
-    <foreign-key id="391" parent="319" name="FKavk5whkbrbff143y5ywqnkmqu">
+    <foreign-key id="391" parent="319" name="FK42akoyn31sq3p0ncit0dcvlut">
       <ColNames>accounts_id</ColNames>
       <RefColNames>id</RefColNames>
-      <RefTableName>account</RefTableName>
+      <RefTableName>accountentity</RefTableName>
     </foreign-key>
     <index id="392" parent="319" name="PRIMARY">
       <ColNames>customerEntity_id
@@ -1477,7 +1477,7 @@ accounts_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="393" parent="319" name="FKavk5whkbrbff143y5ywqnkmqu">
+    <index id="393" parent="319" name="FK42akoyn31sq3p0ncit0dcvlut">
       <ColNames>accounts_id</ColNames>
       <Type>btree</Type>
     </index>
@@ -1504,37 +1504,41 @@ accounts_id</ColNames>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="399" parent="322" name="date">
+    <column id="399" parent="322" name="crateDateAndTime">
       <DataType>datetime(6)|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="400" parent="322" name="transactionType">
+    <column id="400" parent="322" name="role">
       <DataType>varchar(255)|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="401" parent="322" name="version">
-      <DataType>int|0s</DataType>
+    <column id="401" parent="322" name="transactionType">
+      <DataType>varchar(255)|0s</DataType>
       <Position>4</Position>
     </column>
-    <column id="402" parent="322" name="account_id">
-      <DataType>bigint|0s</DataType>
+    <column id="402" parent="322" name="version">
+      <DataType>int|0s</DataType>
       <Position>5</Position>
     </column>
-    <foreign-key id="403" parent="322" name="FK60ogq0ga4x4y0fkeu24tgm0kv">
+    <column id="403" parent="322" name="account_id">
+      <DataType>bigint|0s</DataType>
+      <Position>6</Position>
+    </column>
+    <foreign-key id="404" parent="322" name="FKfprn321kjf5sc4gw8cftse6gu">
       <ColNames>account_id</ColNames>
       <RefColNames>id</RefColNames>
-      <RefTableName>account</RefTableName>
+      <RefTableName>accountentity</RefTableName>
     </foreign-key>
-    <index id="404" parent="322" name="PRIMARY">
+    <index id="405" parent="322" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="405" parent="322" name="FK60ogq0ga4x4y0fkeu24tgm0kv">
+    <index id="406" parent="322" name="FKfprn321kjf5sc4gw8cftse6gu">
       <ColNames>account_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="406" parent="322" name="PRIMARY">
+    <key id="407" parent="322" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

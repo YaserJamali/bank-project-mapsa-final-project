@@ -102,10 +102,7 @@ public class AccountRepository implements BaseRepository<Account, String, Long> 
         return account;
     }
 
-    public static void main(String[] args) {
-        AccountRepository repository=AccountRepository.getInstance();
-        System.out.println(repository.getAl().getAccountNumber());
-    }
+
 
     @Override
     public void close() {

@@ -2,16 +2,14 @@ package ir.mapsa.bank.model;
 
 import ir.mapsa.bank.model.enums.Role;
 
-import javax.persistence.Embeddable;
-import javax.persistence.Embedded;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 import java.util.Date;
 @Embeddable
 public class CreateInfo {
-@Temporal(TemporalType.TIMESTAMP)
-    private Date crateDateAndTime;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date crateDateAndTime = new Date();
 
+    @Enumerated(EnumType.STRING)
     private Role role;
 
     public Date getCrateDateAndTime() {

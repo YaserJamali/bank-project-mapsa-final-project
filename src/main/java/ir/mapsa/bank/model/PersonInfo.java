@@ -17,7 +17,7 @@ public class PersonInfo {
     private String lastName;
 
     private String bio;
-
+@Enumerated(EnumType.STRING)
     private Language language;
 
     private LocalDate birthDay;

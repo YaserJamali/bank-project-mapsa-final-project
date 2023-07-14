@@ -19,8 +19,9 @@ public class Transaction {
     @Enumerated(EnumType.STRING)
     private TransactionType transactionType;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date date = new Date();
+    @Embedded
+
+   private CreateInfo createInfo;
 
     @Version
     private Integer version;
@@ -55,12 +56,12 @@ public class Transaction {
         return this;
     }
 
-    public Date getDate() {
-        return date;
+    public CreateInfo getCreateInfo() {
+        return createInfo;
     }
 
-    public Transaction setDate(Date date) {
-        this.date = date;
+    public Transaction setCreateInfo(CreateInfo createInfo) {
+        this.createInfo = createInfo;
         return this;
     }
 
